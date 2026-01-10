@@ -1,65 +1,122 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+    <main id="main-content" className="mx-auto max-w-xl px-4 pb-32 pt-6 md:px-6 lg:px-8">
+      {/* Style Guide - Proving Design Tokens */}
+      <article className="rounded-2xl border border-border bg-card p-4 shadow-sm md:p-6">
+        <h1 className="text-2xl font-medium tracking-tight text-neutral-900 md:text-3xl dark:text-neutral-50">
+          Design System Preview
+        </h1>
+
+        <p className="mt-4 text-[13px] leading-6 text-neutral-600 dark:text-neutral-300">
+          This page demonstrates the design tokens extracted from reference sites. All styles use
+          Tailwind classes matching the{' '}
+          <span className="rounded bg-yellow-200 px-1.5 py-0.5 text-[12px] font-medium text-neutral-900">
+            design-tokens.md
+          </span>{' '}
+          specification.
+        </p>
+
+        {/* Typography Section */}
+        <section className="mt-8 p-4">
+          <h3 className="text-sm font-semibold text-neutral-900 dark:text-neutral-50">
+            Typography.
+          </h3>
+          <div className="mt-3 space-y-2">
+            <p className="text-xs text-neutral-600 dark:text-neutral-300">text-xs (12px)</p>
+            <p className="text-sm text-neutral-600 dark:text-neutral-300">text-sm (14px)</p>
+            <p className="text-base text-neutral-600 dark:text-neutral-300">text-base (16px)</p>
+            <p className="text-2xl font-medium tracking-tight text-neutral-900 dark:text-neutral-50">
+              text-2xl (24px)
+            </p>
+            <p className="font-mono text-xs text-neutral-500 dark:text-neutral-400">
+              font-mono: 12:34:56
+            </p>
+          </div>
+        </section>
+
+        {/* Colors Section */}
+        <section className="mt-6 p-4">
+          <h3 className="text-sm font-semibold text-neutral-900 dark:text-neutral-50">Colors.</h3>
+          <div className="mt-3 flex flex-wrap gap-2">
+            <div className="h-8 w-8 rounded bg-neutral-50 dark:bg-neutral-950" title="neutral-50" />
+            <div
+              className="h-8 w-8 rounded bg-neutral-100 dark:bg-neutral-900"
+              title="neutral-100"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+            <div
+              className="h-8 w-8 rounded bg-neutral-200 dark:bg-neutral-800"
+              title="neutral-200"
+            />
+            <div
+              className="h-8 w-8 rounded bg-neutral-600 dark:bg-neutral-400"
+              title="neutral-600"
+            />
+            <div
+              className="h-8 w-8 rounded bg-neutral-900 dark:bg-neutral-50"
+              title="neutral-900"
+            />
+            <div className="h-8 w-8 rounded bg-yellow-200" title="accent" />
+          </div>
+        </section>
+
+        {/* Components Section */}
+        <section className="mt-6 p-4">
+          <h3 className="mb-4 text-sm font-semibold text-neutral-900 dark:text-neutral-50">
+            Components.
+          </h3>
+
+          {/* Card */}
+          <div className="rounded-xl border border-neutral-200 bg-white px-4 py-3 md:px-5 md:py-3.5 dark:border-neutral-800 dark:bg-neutral-950">
+            <h4 className="text-sm font-semibold text-neutral-900 dark:text-neutral-50">
+              Sample Card
+            </h4>
+            <p className="mt-2 text-xs leading-relaxed text-neutral-700 dark:text-neutral-300">
+              This card uses the exact token pattern from reference sites.
+            </p>
+          </div>
+
+          {/* Buttons */}
+          <div className="mt-4 flex flex-wrap items-center gap-2">
+            <button className="h-6 w-20 rounded-sm bg-neutral-900 px-4 text-sm font-medium text-white shadow-sm hover:bg-neutral-900/90 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-200">
+              Primary
+            </button>
+            <button className="flex h-6 w-6 items-center justify-center rounded-sm border border-neutral-200 text-neutral-700 hover:bg-neutral-50 dark:border-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-900">
+              ✉
+            </button>
+          </div>
+
+          {/* Tags */}
+          <div className="mt-4 flex flex-wrap gap-2">
+            <span className="inline-flex items-center rounded-full bg-neutral-100 px-2 py-0.5 text-xs font-medium text-neutral-700 dark:bg-neutral-900/60 dark:text-neutral-300">
+              React
+            </span>
+            <span className="inline-flex items-center rounded-full bg-neutral-100 px-2 py-0.5 text-xs font-medium text-neutral-700 dark:bg-neutral-900/60 dark:text-neutral-300">
+              TypeScript
+            </span>
+            <span className="inline-flex items-center rounded-full bg-neutral-100 px-2 py-0.5 text-xs font-medium text-neutral-700 dark:bg-neutral-900/60 dark:text-neutral-300">
+              Next.js
+            </span>
+          </div>
+
+          {/* Date badge */}
+          <div className="mt-4">
+            <span className="whitespace-nowrap rounded-md border border-neutral-200 bg-neutral-50 px-1.5 py-1 text-xs text-neutral-600 dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-300">
+              January 2026 – Present
+            </span>
+          </div>
+        </section>
+
+        {/* Spacing Demo */}
+        <section className="mt-6 p-4">
+          <h3 className="text-sm font-semibold text-neutral-900 dark:text-neutral-50">Spacing.</h3>
+          <div className="mt-3 flex gap-4">
+            <div className="h-8 w-8 rounded bg-neutral-200 dark:bg-neutral-800" />
+            <div className="h-8 w-8 rounded bg-neutral-200 dark:bg-neutral-800" />
+            <div className="h-8 w-8 rounded bg-neutral-200 dark:bg-neutral-800" />
+          </div>
+          <p className="mt-2 text-xs text-neutral-500 dark:text-neutral-400">gap-4 (16px)</p>
+        </section>
+      </article>
+    </main>
+  )
 }
