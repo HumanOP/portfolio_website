@@ -40,7 +40,7 @@ const socialLinks = [
         ),
     },
     {
-        href: 'https://linkedin.com/in/',
+        href: 'https://linkedin.com/in/divyanshu-k',
         label: 'LinkedIn',
         icon: (
             <svg

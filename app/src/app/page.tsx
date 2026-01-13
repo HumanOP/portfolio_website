@@ -18,8 +18,9 @@ export default function Home() {
 
         {/* Bio paragraph */}
         <p className="mt-6 text-base leading-relaxed text-neutral-600 dark:text-neutral-400">
-          A developer who builds efficient, scalable, and intuitive applications. Focused on
-          backend systems, trading infrastructure, and product development.
+          Builder at the intersection of product, engineering, and markets. I don&apos;t just code
+          systems — I obsess over <em>why</em> they exist and <em>who</em> they serve. Currently
+          exploring product management, full-stack development, and trading infrastructure.
         </p>
 
         <ExperienceSection />
