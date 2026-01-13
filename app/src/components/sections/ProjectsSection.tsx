@@ -32,20 +32,20 @@ const projects = [
 export function ProjectsSection() {
     return (
         <section id="projects" className="mt-16">
-            <h2 className="font-mono text-xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100">Projects</h2>
+            <h2 className="font-mono text-xl font-bold tracking-tight text-stone-900 dark:text-neutral-100">Projects</h2>
 
             <div className="mt-8 space-y-10">
                 {projects.map((project) => (
                     <div key={project.name} className="group">
                         <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
-                            <h3 className="font-medium text-neutral-900 dark:text-neutral-100">{project.name}</h3>
-                            <div className="flex gap-3 text-sm">
+                            <h3 className="font-medium text-stone-900 dark:text-neutral-100">{project.name}</h3>
+                            <div className="flex gap-3 font-mono text-sm">
                                 {project.links.live && (
                                     <a
                                         href={project.links.live}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-neutral-500 underline-offset-4 hover:underline dark:text-neutral-400"
+                                        className="text-stone-600 underline-offset-4 hover:text-stone-900 hover:underline dark:text-neutral-400 dark:hover:text-neutral-200"
                                     >
                                         Live ↗
                                     </a>
@@ -55,17 +55,17 @@ export function ProjectsSection() {
                                         href={project.links.code}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-neutral-500 underline-offset-4 hover:underline dark:text-neutral-400"
+                                        className="text-stone-600 underline-offset-4 hover:text-stone-900 hover:underline dark:text-neutral-400 dark:hover:text-neutral-200"
                                     >
                                         Code ↗
                                     </a>
                                 )}
                             </div>
                         </div>
-                        <p className="mt-3 leading-relaxed text-neutral-600 dark:text-neutral-400">
+                        <p className="mt-3 leading-relaxed text-stone-600 dark:text-neutral-400">
                             {project.description}
                         </p>
-                        <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-500">{project.tech}</p>
+                        <p className="mt-2 font-mono text-sm text-stone-500 dark:text-neutral-500">{project.tech}</p>
                     </div>
                 ))}
             </div>

@@ -6,39 +6,63 @@
    ======================================== */
 
 :root {
-  /* Background & Foreground */
-  --background: theme(colors.white);
-  --foreground: theme(colors.neutral.900);
+  /* Background & Foreground - warm off-white for light mode */
+  --background: #fafaf9;
+  /* stone-50 - warmer than pure white */
+  --foreground: #1c1917;
+  /* stone-900 - rich dark */
 
-  /* Card backgrounds */
-  --card: theme(colors.white);
-  --card-foreground: theme(colors.neutral.900);
+  /* Card backgrounds - slightly lighter than page */
+  --card: #ffffff;
+  --card-foreground: #1c1917;
 
-  /* Muted elements */
-  --muted: theme(colors.neutral.100);
-  --muted-foreground: theme(colors.neutral.600);
+  /* Muted elements - more visible */
+  --muted: #f5f5f4;
+  /* stone-100 */
+  --muted-foreground: #57534e;
+  /* stone-600 - stronger contrast */
 
-  /* Borders */
-  --border: theme(colors.neutral.200);
+  /* Borders - more visible */
+  --border: #d6d3d1;
+  /* stone-300 - stronger than 200 */
 
   /* Ring/Focus */
-  --ring: theme(colors.blue.500);
+  --ring: #3b82f6;
 
   /* Accent (highlight) */
-  --accent: theme(colors.yellow.200);
+  --accent: #fef08a;
+
+  /* Text hierarchy */
+  --text-primary: #1c1917;
+  /* stone-900 */
+  --text-secondary: #44403c;
+  /* stone-700 */
+  --text-muted: #78716c;
+  /* stone-500 */
 }
 
 .dark {
-  --background: theme(colors.neutral.950);
-  --foreground: theme(colors.neutral.50);
+  --background: #0a0a0a;
+  /* neutral-950 */
+  --foreground: #fafafa;
+  /* neutral-50 */
 
-  --card: theme(colors.neutral.950);
-  --card-foreground: theme(colors.neutral.50);
+  --card: #0a0a0a;
+  --card-foreground: #fafafa;
 
-  --muted: theme(colors.neutral.900);
-  --muted-foreground: theme(colors.neutral.400);
+  --muted: #171717;
+  /* neutral-900 */
+  --muted-foreground: #a3a3a3;
+  /* neutral-400 */
 
-  --border: theme(colors.neutral.800);
+  --border: #262626;
+  /* neutral-800 */
+
+  --text-primary: #fafafa;
+  --text-secondary: #d4d4d4;
+  /* neutral-300 */
+  --text-muted: #737373;
+  /* neutral-500 */
 }
 
 /* ========================================

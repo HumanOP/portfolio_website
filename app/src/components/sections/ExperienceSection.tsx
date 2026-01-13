@@ -25,17 +25,17 @@ const experiences = [
 export function ExperienceSection() {
     return (
         <section id="experience" className="mt-16">
-            <h2 className="font-mono text-xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100">Experience</h2>
+            <h2 className="font-mono text-xl font-bold tracking-tight text-stone-900 dark:text-neutral-100">Experience</h2>
 
             <div className="mt-8 space-y-10">
                 {experiences.map((exp) => (
                     <div key={exp.company} className="group">
                         <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-                            <h3 className="font-medium text-neutral-900 dark:text-neutral-100">{exp.company}</h3>
-                            <span className="text-sm text-neutral-500 dark:text-neutral-400">{exp.period}</span>
+                            <h3 className="font-medium text-stone-900 dark:text-neutral-100">{exp.company}</h3>
+                            <span className="font-mono text-sm text-stone-500 dark:text-neutral-400">{exp.period}</span>
                         </div>
-                        <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">{exp.role}</p>
-                        <p className="mt-3 leading-relaxed text-neutral-600 dark:text-neutral-400">
+                        <p className="mt-1 text-sm text-stone-600 dark:text-neutral-400">{exp.role}</p>
+                        <p className="mt-3 leading-relaxed text-stone-600 dark:text-neutral-400">
                             {exp.description}
                         </p>
                     </div>
