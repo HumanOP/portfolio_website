@@ -9,21 +9,21 @@ const navLinks = [
 
 export function Nav() {
     return (
-        <nav className="mx-auto mb-4 flex w-full max-w-xl items-center justify-between px-4 text-xs text-neutral-600 md:px-6 lg:px-8 dark:text-neutral-300">
+        <nav className="mx-auto flex w-full max-w-2xl items-center justify-between px-6 py-4 text-sm text-neutral-500 md:px-8 dark:text-neutral-400">
             <Link
                 href="#"
-                className="font-semibold text-neutral-900 dark:text-neutral-50"
+                className="font-medium text-neutral-900 dark:text-neutral-100"
                 aria-label="Scroll to top"
             >
-                portfolio.
+                dk.
             </Link>
 
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-6">
                 {navLinks.map((link) => (
                     <Link
                         key={link.href}
                         href={link.href}
-                        className="text-xs transition-colors hover:text-neutral-900 sm:text-xs dark:hover:text-neutral-50"
+                        className="transition-colors hover:text-neutral-900 dark:hover:text-neutral-100"
                     >
                         {link.label}
                     </Link>

@@ -1,46 +1,55 @@
 export function ProjectsSection() {
     return (
-        <section id="projects" className="mt-6 px-4 md:px-5">
-            <h3 className="mb-4 text-sm font-semibold text-neutral-900 dark:text-neutral-50">
-                Projects.
-            </h3>
+        <section id="projects" className="mt-16">
+            <h2 className="text-lg font-medium text-neutral-900 dark:text-neutral-100">Projects</h2>
 
-            {/* Placeholder - will implement: ProjectCard components */}
-            <div className="space-y-4">
-                <div className="rounded-xl border border-neutral-200 bg-white px-4 py-3 md:px-5 md:py-3.5 dark:border-neutral-800 dark:bg-neutral-950">
-                    <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-                        <h4 className="text-sm font-semibold text-neutral-900 dark:text-neutral-50">
-                            Project Name
-                        </h4>
-                        <div className="flex gap-2">
+            <div className="mt-8 space-y-8">
+                {/* Project Item */}
+                <div className="group">
+                    <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
+                        <h3 className="font-medium text-neutral-900 dark:text-neutral-100">Project Name</h3>
+                        <div className="flex gap-3 text-sm">
                             <a
                                 href="#"
-                                className="rounded-sm border border-neutral-200 px-2 py-0.5 text-xs text-neutral-700 hover:bg-neutral-50 dark:border-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-900"
+                                className="text-neutral-500 underline-offset-4 hover:underline dark:text-neutral-400"
                             >
-                                live preview ↗
+                                Live ↗
                             </a>
                             <a
                                 href="#"
-                                className="rounded-sm border border-neutral-200 px-2 py-0.5 text-xs text-neutral-700 hover:bg-neutral-50 dark:border-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-900"
+                                className="text-neutral-500 underline-offset-4 hover:underline dark:text-neutral-400"
                             >
-                                github ↗
+                                Code ↗
                             </a>
                         </div>
                     </div>
+                    <p className="mt-3 text-neutral-600 dark:text-neutral-400">
+                        Brief description of the project, what problem it solves, and key features.
+                    </p>
+                    <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-500">
+                        React · TypeScript · PostgreSQL
+                    </p>
+                </div>
 
-                    <ul className="mt-2 list-disc space-y-1 pl-5 text-xs leading-relaxed text-neutral-700 dark:text-neutral-300">
-                        <li>Feature or achievement description</li>
-                        <li>Another feature or metric</li>
-                    </ul>
-
-                    <div className="mt-3 flex flex-wrap gap-2">
-                        <span className="inline-flex items-center rounded-full bg-neutral-100 px-2 py-0.5 text-xs font-medium text-neutral-700 dark:bg-neutral-900/60 dark:text-neutral-300">
-                            React
-                        </span>
-                        <span className="inline-flex items-center rounded-full bg-neutral-100 px-2 py-0.5 text-xs font-medium text-neutral-700 dark:bg-neutral-900/60 dark:text-neutral-300">
-                            TypeScript
-                        </span>
+                {/* Another Project */}
+                <div className="group">
+                    <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
+                        <h3 className="font-medium text-neutral-900 dark:text-neutral-100">Another Project</h3>
+                        <div className="flex gap-3 text-sm">
+                            <a
+                                href="#"
+                                className="text-neutral-500 underline-offset-4 hover:underline dark:text-neutral-400"
+                            >
+                                Live ↗
+                            </a>
+                        </div>
                     </div>
+                    <p className="mt-3 text-neutral-600 dark:text-neutral-400">
+                        Description of another project with its key achievements.
+                    </p>
+                    <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-500">
+                        Python · FastAPI · Redis
+                    </p>
                 </div>
             </div>
         </section>

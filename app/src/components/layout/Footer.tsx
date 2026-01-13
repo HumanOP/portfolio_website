@@ -83,24 +83,22 @@ const socialLinks = [
 
 export function Footer() {
     return (
-        <footer className="mx-auto mt-8 flex w-full max-w-xl flex-col items-center gap-4 px-4 pb-8 text-center md:px-6 lg:px-8">
-            <div className="flex items-center gap-3">
+        <footer className="mx-auto mt-16 flex w-full max-w-2xl flex-col items-center gap-6 px-6 pb-12 text-center md:px-8">
+            <div className="flex items-center gap-4">
                 {socialLinks.map((link) => (
                     <a
                         key={link.label}
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex h-6 w-6 items-center justify-center rounded-sm border border-neutral-200 text-neutral-700 transition-colors hover:bg-neutral-50 dark:border-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-900"
+                        className="flex h-8 w-8 items-center justify-center rounded-md text-neutral-500 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100"
                         aria-label={`Open ${link.label}`}
                     >
                         {link.icon}
                     </a>
                 ))}
             </div>
-            <p className="text-xs text-neutral-500 dark:text-neutral-400">
-                Based in India 🇮🇳 · Built with Next.js
-            </p>
+            <p className="text-sm text-neutral-400 dark:text-neutral-500">Based in India</p>
         </footer>
     )
 }

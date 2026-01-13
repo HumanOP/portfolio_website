@@ -1,32 +1,35 @@
 export function ExperienceSection() {
     return (
-        <section id="experience" className="mt-6 px-4 md:px-5">
-            <h3 className="text-sm font-semibold text-neutral-900 dark:text-neutral-50">
-                Work Experience.
-            </h3>
+        <section id="experience" className="mt-16">
+            <h2 className="text-lg font-medium text-neutral-900 dark:text-neutral-100">Experience</h2>
 
-            {/* Placeholder - will implement: ExperienceCard components */}
-            <div className="mt-4 space-y-4">
-                <div className="rounded-xl border border-neutral-200 bg-white px-4 py-3 md:px-5 md:py-3.5 dark:border-neutral-800 dark:bg-neutral-950">
-                    <div className="flex items-start gap-3">
-                        <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
-                            🏢
-                        </div>
-                        <div className="flex-1">
-                            <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-3">
-                                <h4 className="min-w-0 flex-1 text-sm font-semibold text-neutral-900 dark:text-neutral-50">
-                                    Company Name
-                                </h4>
-                                <span className="flex-shrink-0 self-start whitespace-nowrap rounded-md border border-neutral-200 bg-neutral-50 px-1.5 py-1 text-xs text-neutral-600 dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-300">
-                                    Jan 2026 – Present
-                                </span>
-                            </div>
-                            <p className="text-xs text-neutral-600 dark:text-neutral-300">Your Role</p>
-                            <p className="mt-2 text-xs leading-relaxed text-neutral-700 dark:text-neutral-300">
-                                Description of your work and achievements.
-                            </p>
-                        </div>
+            <div className="mt-8 space-y-8">
+                {/* Experience Item */}
+                <div className="group">
+                    <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+                        <h3 className="font-medium text-neutral-900 dark:text-neutral-100">Company Name</h3>
+                        <span className="text-sm text-neutral-500 dark:text-neutral-400">
+                            Jan 2026 – Present
+                        </span>
                     </div>
+                    <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">Your Role</p>
+                    <p className="mt-3 text-neutral-600 dark:text-neutral-400">
+                        Description of your work and achievements. Focus on impact and results.
+                    </p>
+                </div>
+
+                {/* Another Experience Item */}
+                <div className="group">
+                    <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+                        <h3 className="font-medium text-neutral-900 dark:text-neutral-100">Previous Company</h3>
+                        <span className="text-sm text-neutral-500 dark:text-neutral-400">
+                            Jun 2025 – Dec 2025
+                        </span>
+                    </div>
+                    <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">Previous Role</p>
+                    <p className="mt-3 text-neutral-600 dark:text-neutral-400">
+                        Description of your work at this company.
+                    </p>
                 </div>
             </div>
         </section>
