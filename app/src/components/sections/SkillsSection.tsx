@@ -9,7 +9,7 @@ const skills = {
 export function SkillsSection() {
     return (
         <section id="skills" className="mt-16">
-            <h2 className="text-lg font-medium text-neutral-900 dark:text-neutral-100">Skills</h2>
+            <h2 className="text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">Skills</h2>
 
             <div className="mt-6 space-y-4">
                 <div>

@@ -148,3 +148,34 @@ body {
   animation: fade-in-up 0.5s ease-out 0.4s forwards;
   opacity: 0;
 }
+
+/* Shimmer text animation */
+@keyframes shimmer {
+  0% {
+    background-position: 200% center;
+  }
+
+  100% {
+    background-position: -200% center;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+/* Loading screen fade out */
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.animate-fade-out {
+  animation: fade-out 0.5s ease-out forwards;
+}

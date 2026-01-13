@@ -4,13 +4,13 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 
 const roles = [
-    'Product Engineer',
-    'Backend Developer',
-    'Trading Systems Builder',
-    '0→1 Product Builder',
-    'Quant Developer',
-    'Trek Leader',
-    'Builder',
+    'Product Engineer · from India',
+    'Backend Developer · from India',
+    'Trading Systems Builder · from India',
+    '0→1 Product Builder · from India',
+    'Quant Developer · from India',
+    'Trek Leader · from India',
+    'Builder · from India',
 ]
 
 function TypewriterText() {
@@ -31,25 +31,21 @@ function TypewriterText() {
         const timeout = setTimeout(
             () => {
                 if (!isDeleting) {
-                    // Typing
                     if (charIndex < currentRole.length) {
                         setCharIndex((prev) => prev + 1)
                     } else {
-                        // Pause at end, then start deleting
-                        setTimeout(() => setIsDeleting(true), 1500)
+                        setTimeout(() => setIsDeleting(true), 1800)
                     }
                 } else {
-                    // Deleting
                     if (charIndex > 0) {
                         setCharIndex((prev) => prev - 1)
                     } else {
-                        // Move to next role
                         setIsDeleting(false)
                         setRoleIndex((prev) => (prev + 1) % roles.length)
                     }
                 }
             },
-            isDeleting ? 50 : 100
+            isDeleting ? 40 : 80
         )
 
         return () => clearTimeout(timeout)
@@ -57,16 +53,16 @@ function TypewriterText() {
 
     if (!mounted) {
         return (
-            <span className="inline-block min-w-[200px] text-neutral-500 dark:text-neutral-400">
-                {roles[0]}
-            </span>
+            <span className="inline-block text-neutral-500 dark:text-neutral-400">{roles[0]}</span>
         )
     }
 
     return (
-        <span className="inline-block min-w-[200px] text-neutral-500 dark:text-neutral-400">
+        <span className="inline-block text-neutral-500 dark:text-neutral-400">
             {currentRole.slice(0, charIndex)}
-            <span className="animate-pulse text-neutral-400 dark:text-neutral-500">|</span>
+            <span className="ml-0.5 inline-block w-0.5 animate-pulse bg-neutral-400 dark:bg-neutral-500">
+                &nbsp;
+            </span>
         </span>
     )
 }
@@ -101,17 +97,23 @@ function LiveClock() {
     )
 }
 
+// Animated greeting with shimmer effect
+function AnimatedGreeting() {
+    return (
+        <span className="animate-shimmer bg-gradient-to-r from-neutral-600 via-neutral-400 to-neutral-600 bg-[length:200%_100%] bg-clip-text text-transparent dark:from-neutral-400 dark:via-neutral-200 dark:to-neutral-400">
+            hi there, I&apos;m
+        </span>
+    )
+}
+
 export function HeroSection() {
     return (
         <section id="about" className="pt-12 md:pt-16">
             <div className="flex items-start gap-6">
                 {/* Avatar with glow effect */}
                 <div className="group relative">
-                    {/* Glow ring on hover */}
                     <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-neutral-400 to-neutral-600 opacity-0 blur-sm transition-opacity duration-300 group-hover:opacity-50 dark:from-neutral-500 dark:to-neutral-700" />
-
-                    {/* Avatar container */}
-                    <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full ring-2 ring-neutral-200 transition-all duration-300 group-hover:ring-neutral-400 dark:ring-neutral-700 dark:group-hover:ring-neutral-500">
+                    <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full ring-2 ring-neutral-200 transition-all duration-300 group-hover:ring-neutral-400 md:h-24 md:w-24 dark:ring-neutral-700 dark:group-hover:ring-neutral-500">
                         <Image
                             src="/avatar.jpg"
                             alt="Divyanshu Kashyap"
@@ -123,21 +125,26 @@ export function HeroSection() {
                 </div>
 
                 <div className="flex-1">
-                    {/* Name + Clock */}
-                    <div className="flex items-baseline justify-between">
-                        <h1 className="text-3xl font-medium tracking-tight text-neutral-900 md:text-4xl dark:text-neutral-100">
-                            Divyanshu Kashyap
-                        </h1>
+                    {/* Animated Greeting + Name + Clock */}
+                    <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+                        <div>
+                            <p className="text-sm font-medium">
+                                <AnimatedGreeting />
+                            </p>
+                            <h1 className="text-2xl font-semibold tracking-tight text-neutral-900 sm:text-3xl md:text-4xl dark:text-neutral-100">
+                                Divyanshu Kashyap
+                            </h1>
+                        </div>
                         <LiveClock />
                     </div>
 
-                    {/* Typewriter Role */}
-                    <p className="mt-2 text-base">
-                        <TypewriterText /> · from India
+                    {/* Typewriter Role (includes "from India") */}
+                    <p className="mt-3 h-6 text-base">
+                        <TypewriterText />
                     </p>
 
                     {/* Social links */}
-                    <div className="mt-6 flex flex-wrap items-center gap-3">
+                    <div className="mt-6 flex flex-wrap items-center gap-2">
                         <a
                             href="https://drive.google.com/file/d/YOUR_RESUME_ID/view"
                             target="_blank"
@@ -148,7 +155,7 @@ export function HeroSection() {
                         </a>
                         <a
                             href="mailto:divyanshu_k@me.iitr.ac.in"
-                            className="rounded-md px-4 py-2 text-sm text-neutral-600 transition-colors hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-800"
+                            className="rounded-md px-3 py-2 text-sm text-neutral-600 transition-colors hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-800"
                         >
                             Email
                         </a>
@@ -156,7 +163,7 @@ export function HeroSection() {
                             href="https://github.com/HumanOP"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="rounded-md px-4 py-2 text-sm text-neutral-600 transition-colors hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-800"
+                            className="rounded-md px-3 py-2 text-sm text-neutral-600 transition-colors hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-800"
                         >
                             GitHub
                         </a>
@@ -164,7 +171,7 @@ export function HeroSection() {
                             href="https://www.linkedin.com/in/divyanshu-k/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="rounded-md px-4 py-2 text-sm text-neutral-600 transition-colors hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-800"
+                            className="rounded-md px-3 py-2 text-sm text-neutral-600 transition-colors hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-800"
                         >
                             LinkedIn
                         </a>
