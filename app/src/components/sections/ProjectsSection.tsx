@@ -32,7 +32,7 @@ const projects = [
 export function ProjectsSection() {
     return (
         <section id="projects" className="mt-16">
-            <h2 className="text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">Projects</h2>
+            <h2 className="font-mono text-xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100">Projects</h2>
 
             <div className="mt-8 space-y-10">
                 {projects.map((project) => (

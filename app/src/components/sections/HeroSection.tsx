@@ -4,13 +4,13 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 
 const roles = [
-    'Product Engineer · from India',
-    'Backend Developer · from India',
-    'Trading Systems Builder · from India',
-    '0→1 Product Builder · from India',
-    'Quant Developer · from India',
-    'Trek Leader · from India',
-    'Builder · from India',
+    'Product Engineer',
+    'Backend Developer',
+    'Trading Systems Builder',
+    '0→1 Product Builder',
+    'Quant Developer',
+    'Trek Leader',
+    'Builder',
 ]
 
 function TypewriterText() {
@@ -53,16 +53,19 @@ function TypewriterText() {
 
     if (!mounted) {
         return (
-            <span className="inline-block text-neutral-500 dark:text-neutral-400">{roles[0]}</span>
+            <span className="font-mono text-neutral-500 dark:text-neutral-400">
+                {roles[0]}
+                <span className="ml-0.5 inline-block h-5 w-0.5 bg-neutral-400 dark:bg-neutral-500" />
+                <span className="text-neutral-400 dark:text-neutral-500"> · from India</span>
+            </span>
         )
     }
 
     return (
-        <span className="inline-block text-neutral-500 dark:text-neutral-400">
+        <span className="font-mono text-neutral-500 dark:text-neutral-400">
             {currentRole.slice(0, charIndex)}
-            <span className="ml-0.5 inline-block w-0.5 animate-pulse bg-neutral-400 dark:bg-neutral-500">
-                &nbsp;
-            </span>
+            <span className="ml-0.5 inline-block h-5 w-0.5 animate-pulse bg-neutral-400 dark:bg-neutral-500" />
+            <span className="text-neutral-400 dark:text-neutral-500"> · from India</span>
         </span>
     )
 }
@@ -100,7 +103,7 @@ function LiveClock() {
 // Animated greeting with shimmer effect
 function AnimatedGreeting() {
     return (
-        <span className="animate-shimmer bg-gradient-to-r from-neutral-600 via-neutral-400 to-neutral-600 bg-[length:200%_100%] bg-clip-text text-transparent dark:from-neutral-400 dark:via-neutral-200 dark:to-neutral-400">
+        <span className="animate-shimmer bg-gradient-to-r from-neutral-600 via-neutral-400 to-neutral-600 bg-[length:200%_100%] bg-clip-text font-mono text-transparent dark:from-neutral-400 dark:via-neutral-200 dark:to-neutral-400">
             hi there, I&apos;m
         </span>
     )
@@ -110,15 +113,19 @@ export function HeroSection() {
     return (
         <section id="about" className="pt-12 md:pt-16">
             <div className="flex items-start gap-6">
-                {/* Avatar with glow effect */}
+                {/* Avatar with canvas-like glow effect */}
                 <div className="group relative">
-                    <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-neutral-400 to-neutral-600 opacity-0 blur-sm transition-opacity duration-300 group-hover:opacity-50 dark:from-neutral-500 dark:to-neutral-700" />
-                    <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full ring-2 ring-neutral-200 transition-all duration-300 group-hover:ring-neutral-400 md:h-24 md:w-24 dark:ring-neutral-700 dark:group-hover:ring-neutral-500">
+                    {/* Outer glow ring */}
+                    <div className="absolute -inset-2 rounded-full bg-gradient-to-r from-neutral-300 via-neutral-400 to-neutral-300 opacity-0 blur-md transition-all duration-500 group-hover:opacity-60 dark:from-neutral-600 dark:via-neutral-500 dark:to-neutral-600" />
+                    {/* Inner glow */}
+                    <div className="absolute -inset-1 rounded-full bg-neutral-200 opacity-0 transition-opacity duration-300 group-hover:opacity-30 dark:bg-neutral-700" />
+                    {/* Avatar container */}
+                    <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full ring-2 ring-neutral-300 transition-all duration-300 group-hover:ring-4 group-hover:ring-neutral-400 md:h-24 md:w-24 dark:ring-neutral-600 dark:group-hover:ring-neutral-500">
                         <Image
                             src="/avatar.jpg"
                             alt="Divyanshu Kashyap"
                             fill
-                            className="object-cover object-top"
+                            className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
                             priority
                         />
                     </div>
@@ -128,34 +135,34 @@ export function HeroSection() {
                     {/* Animated Greeting + Name + Clock */}
                     <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
                         <div>
-                            <p className="text-sm font-medium">
+                            <p className="text-sm">
                                 <AnimatedGreeting />
                             </p>
-                            <h1 className="text-2xl font-semibold tracking-tight text-neutral-900 sm:text-3xl md:text-4xl dark:text-neutral-100">
+                            <h1 className="text-2xl font-bold tracking-tight text-neutral-900 sm:text-3xl md:text-4xl dark:text-neutral-100">
                                 Divyanshu Kashyap
                             </h1>
                         </div>
                         <LiveClock />
                     </div>
 
-                    {/* Typewriter Role (includes "from India") */}
-                    <p className="mt-3 h-6 text-base">
+                    {/* Typewriter Role (cursor before "from India") */}
+                    <p className="mt-3 min-h-6 text-sm">
                         <TypewriterText />
                     </p>
 
-                    {/* Social links */}
+                    {/* Social links - John Rush inspired minimal style */}
                     <div className="mt-6 flex flex-wrap items-center gap-2">
                         <a
                             href="https://drive.google.com/file/d/YOUR_RESUME_ID/view"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="rounded-md bg-neutral-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-neutral-800 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-200"
+                            className="rounded border border-neutral-300 bg-neutral-900 px-4 py-2 font-mono text-sm font-medium text-white transition-all hover:bg-neutral-800 dark:border-neutral-700 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-200"
                         >
                             Resume
                         </a>
                         <a
                             href="mailto:divyanshu_k@me.iitr.ac.in"
-                            className="rounded-md px-3 py-2 text-sm text-neutral-600 transition-colors hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-800"
+                            className="rounded border border-neutral-300 px-3 py-2 font-mono text-sm text-neutral-600 transition-all hover:border-neutral-400 hover:bg-neutral-50 dark:border-neutral-700 dark:text-neutral-400 dark:hover:border-neutral-600 dark:hover:bg-neutral-800"
                         >
                             Email
                         </a>
@@ -163,7 +170,7 @@ export function HeroSection() {
                             href="https://github.com/HumanOP"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="rounded-md px-3 py-2 text-sm text-neutral-600 transition-colors hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-800"
+                            className="rounded border border-neutral-300 px-3 py-2 font-mono text-sm text-neutral-600 transition-all hover:border-neutral-400 hover:bg-neutral-50 dark:border-neutral-700 dark:text-neutral-400 dark:hover:border-neutral-600 dark:hover:bg-neutral-800"
                         >
                             GitHub
                         </a>
@@ -171,7 +178,7 @@ export function HeroSection() {
                             href="https://www.linkedin.com/in/divyanshu-k/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="rounded-md px-3 py-2 text-sm text-neutral-600 transition-colors hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-800"
+                            className="rounded border border-neutral-300 px-3 py-2 font-mono text-sm text-neutral-600 transition-all hover:border-neutral-400 hover:bg-neutral-50 dark:border-neutral-700 dark:text-neutral-400 dark:hover:border-neutral-600 dark:hover:bg-neutral-800"
                         >
                             LinkedIn
                         </a>
