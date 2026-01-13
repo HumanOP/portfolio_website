@@ -1,7 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import Image from 'next/image'
+import { useState, useEffect, useCallback } from 'react'
 
 const roles = [
     'Product Engineer',
@@ -13,25 +12,66 @@ const roles = [
     'Builder',
 ]
 
-function RotatingText() {
-    const [index, setIndex] = useState(0)
+function TypewriterText() {
+    const [roleIndex, setRoleIndex] = useState(0)
+    const [charIndex, setCharIndex] = useState(0)
+    const [isDeleting, setIsDeleting] = useState(false)
+    const [mounted, setMounted] = useState(false)
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            setIndex((prev) => (prev + 1) % roles.length)
-        }, 2500)
-        return () => clearInterval(interval)
+        setMounted(true)
     }, [])
 
+    const currentRole = roles[roleIndex]
+
+    useEffect(() => {
+        if (!mounted) return
+
+        const timeout = setTimeout(
+            () => {
+                if (!isDeleting) {
+                    // Typing
+                    if (charIndex < currentRole.length) {
+                        setCharIndex((prev) => prev + 1)
+                    } else {
+                        // Pause at end, then start deleting
+                        setTimeout(() => setIsDeleting(true), 1500)
+                    }
+                } else {
+                    // Deleting
+                    if (charIndex > 0) {
+                        setCharIndex((prev) => prev - 1)
+                    } else {
+                        // Move to next role
+                        setIsDeleting(false)
+                        setRoleIndex((prev) => (prev + 1) % roles.length)
+                    }
+                }
+            },
+            isDeleting ? 50 : 100
+        )
+
+        return () => clearTimeout(timeout)
+    }, [charIndex, isDeleting, currentRole, mounted])
+
+    if (!mounted) {
+        return (
+            <span className="inline-block min-w-[200px] text-neutral-500 dark:text-neutral-400">
+                {roles[0]}
+            </span>
+        )
+    }
+
     return (
-        <span className="inline-block min-w-[180px] text-neutral-500 dark:text-neutral-400">
-            {roles[index]}
+        <span className="inline-block min-w-[200px] text-neutral-500 dark:text-neutral-400">
+            {currentRole.slice(0, charIndex)}
+            <span className="animate-pulse text-neutral-400 dark:text-neutral-500">|</span>
         </span>
     )
 }
 
 function LiveClock() {
-    const [time, setTime] = useState('')
+    const [time, setTime] = useState<string | null>(null)
 
     useEffect(() => {
         const update = () => {
@@ -49,10 +89,15 @@ function LiveClock() {
         return () => clearInterval(interval)
     }, [])
 
+    // Show placeholder on server, actual time on client
+    if (!time) {
+        return (
+            <span className="font-mono text-sm text-neutral-400 dark:text-neutral-500">--:-- IST</span>
+        )
+    }
+
     return (
-        <span className="font-mono text-sm text-neutral-400 dark:text-neutral-500">
-            {time} IST
-        </span>
+        <span className="font-mono text-sm text-neutral-400 dark:text-neutral-500">{time} IST</span>
     )
 }
 
@@ -74,9 +119,9 @@ export function HeroSection() {
                         <LiveClock />
                     </div>
 
-                    {/* Rotating Role */}
+                    {/* Typewriter Role */}
                     <p className="mt-2 text-base">
-                        <RotatingText /> · from India
+                        <TypewriterText /> · from India
                     </p>
 
                     {/* Social links */}
