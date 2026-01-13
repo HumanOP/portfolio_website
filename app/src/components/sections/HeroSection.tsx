@@ -1,6 +1,7 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 const roles = [
     'Product Engineer',
@@ -89,7 +90,6 @@ function LiveClock() {
         return () => clearInterval(interval)
     }, [])
 
-    // Show placeholder on server, actual time on client
     if (!time) {
         return (
             <span className="font-mono text-sm text-neutral-400 dark:text-neutral-500">--:-- IST</span>
@@ -105,9 +105,21 @@ export function HeroSection() {
     return (
         <section id="about" className="pt-12 md:pt-16">
             <div className="flex items-start gap-6">
-                {/* Avatar */}
-                <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full bg-neutral-200 dark:bg-neutral-800">
-                    {/* TODO: Add actual image */}
+                {/* Avatar with glow effect */}
+                <div className="group relative">
+                    {/* Glow ring on hover */}
+                    <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-neutral-400 to-neutral-600 opacity-0 blur-sm transition-opacity duration-300 group-hover:opacity-50 dark:from-neutral-500 dark:to-neutral-700" />
+
+                    {/* Avatar container */}
+                    <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full ring-2 ring-neutral-200 transition-all duration-300 group-hover:ring-neutral-400 dark:ring-neutral-700 dark:group-hover:ring-neutral-500">
+                        <Image
+                            src="/avatar.jpg"
+                            alt="Divyanshu Kashyap"
+                            fill
+                            className="object-cover object-top"
+                            priority
+                        />
+                    </div>
                 </div>
 
                 <div className="flex-1">
