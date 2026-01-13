@@ -9,10 +9,10 @@ const navLinks = [
 
 export function Nav() {
     return (
-        <nav className="mx-auto flex w-full max-w-2xl items-center justify-between px-6 py-4 text-sm text-neutral-500 md:px-8 dark:text-neutral-400">
+        <nav className="mx-auto flex w-full max-w-3xl items-center justify-between px-4 py-4 text-sm text-muted-foreground md:px-6">
             <Link
                 href="#"
-                className="font-medium text-neutral-900 dark:text-neutral-100"
+                className="font-medium text-foreground transition-colors hover:text-stone-600 dark:hover:text-neutral-300"
                 aria-label="Scroll to top"
             >
                 dk.

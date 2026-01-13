@@ -156,13 +156,13 @@ export function HeroSection() {
                             href="https://drive.google.com/file/d/YOUR_RESUME_ID/view"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="rounded border border-stone-400 bg-stone-900 px-4 py-2 font-mono text-sm font-medium text-white transition-all hover:bg-stone-800 dark:border-neutral-700 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-200"
+                            className="rounded bg-stone-900 px-4 py-2 font-mono text-sm font-medium text-white transition-all hover:bg-stone-700 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-300"
                         >
                             Resume
                         </a>
                         <a
                             href="mailto:divyanshu_k@me.iitr.ac.in"
-                            className="rounded border border-stone-300 px-3 py-2 font-mono text-sm text-stone-700 transition-all hover:border-stone-400 hover:bg-stone-100 dark:border-neutral-700 dark:text-neutral-400 dark:hover:border-neutral-600 dark:hover:bg-neutral-800"
+                            className="rounded bg-stone-200 px-3 py-2 font-mono text-sm text-stone-700 transition-all hover:bg-stone-300 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700"
                         >
                             Email
                         </a>
@@ -170,7 +170,7 @@ export function HeroSection() {
                             href="https://github.com/HumanOP"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="rounded border border-stone-300 px-3 py-2 font-mono text-sm text-stone-700 transition-all hover:border-stone-400 hover:bg-stone-100 dark:border-neutral-700 dark:text-neutral-400 dark:hover:border-neutral-600 dark:hover:bg-neutral-800"
+                            className="rounded bg-stone-200 px-3 py-2 font-mono text-sm text-stone-700 transition-all hover:bg-stone-300 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700"
                         >
                             GitHub
                         </a>
@@ -178,7 +178,7 @@ export function HeroSection() {
                             href="https://www.linkedin.com/in/divyanshu-k/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="rounded border border-stone-300 px-3 py-2 font-mono text-sm text-stone-700 transition-all hover:border-stone-400 hover:bg-stone-100 dark:border-neutral-700 dark:text-neutral-400 dark:hover:border-neutral-600 dark:hover:bg-neutral-800"
+                            className="rounded bg-stone-200 px-3 py-2 font-mono text-sm text-stone-700 transition-all hover:bg-stone-300 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700"
                         >
                             LinkedIn
                         </a>

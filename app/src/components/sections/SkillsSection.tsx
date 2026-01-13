@@ -38,7 +38,7 @@ export function SkillsSection() {
                             {group.skills.map((skill) => (
                                 <span
                                     key={skill}
-                                    className="cursor-default rounded border border-stone-300 bg-stone-100 px-3 py-1.5 font-mono text-sm text-stone-700 transition-all hover:border-stone-500 hover:bg-stone-200 dark:border-neutral-700 dark:bg-neutral-800/50 dark:text-neutral-300 dark:hover:border-neutral-500 dark:hover:bg-neutral-800"
+                                    className="cursor-default rounded bg-stone-200 px-3 py-1.5 font-mono text-sm text-stone-700 transition-all hover:bg-stone-300 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700"
                                 >
                                     {skill}
                                 </span>
