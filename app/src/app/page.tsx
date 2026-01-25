@@ -19,7 +19,7 @@ export default function Home() {
 
       {/* Dashed border frame container */}
       <div className="relative z-10 mx-auto max-w-3xl px-4 py-8 md:px-6">
-        <div className="rounded-lg border-2 border-dashed border-stone-300 bg-white/80 p-6 md:p-10 dark:border-neutral-700 dark:bg-neutral-900/80">
+        <div className="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm dark:border-neutral-800 dark:bg-neutral-950 md:p-10">
           <main id="main-content" className="mx-auto max-w-2xl">
             {/* Hero Section */}
             <div className="animate-fade-in">

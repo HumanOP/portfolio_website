@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import { Mail, Github, Linkedin, Twitter } from 'lucide-react'
 
 const roles = [
     'Product Engineer',
@@ -55,8 +56,8 @@ function TypewriterText() {
         return (
             <span className="font-mono text-stone-600 dark:text-neutral-400">
                 {roles[0]}
-                <span className="ml-0.5 inline-block h-5 w-0.5 bg-stone-500 dark:bg-neutral-500" />
-                <span className="text-stone-500 dark:text-neutral-500"> · from India</span>
+                <span className="animate-blink ml-0.5 inline-block h-5 w-0.5 bg-stone-500 dark:bg-neutral-500" />
+                <span className="text-stone-500 dark:text-neutral-500"> from India</span>
             </span>
         )
     }
@@ -64,8 +65,8 @@ function TypewriterText() {
     return (
         <span className="font-mono text-stone-600 dark:text-neutral-400">
             {currentRole.slice(0, charIndex)}
-            <span className="ml-0.5 inline-block h-5 w-0.5 animate-pulse bg-stone-500 dark:bg-neutral-500" />
-            <span className="text-stone-500 dark:text-neutral-500"> · from India</span>
+            <span className="animate-blink ml-0.5 inline-block h-5 w-0.5 bg-stone-500 dark:bg-neutral-500" />
+            <span className="text-stone-500 dark:text-neutral-500"> from India</span>
         </span>
     )
 }
@@ -150,7 +151,7 @@ export function HeroSection() {
                         <TypewriterText />
                     </p>
 
-                    {/* Social links - John Rush inspired minimal style */}
+                    {/* Social links - Icon buttons + Resume text */}
                     <div className="mt-6 flex flex-wrap items-center gap-2">
                         <a
                             href="https://drive.google.com/file/d/YOUR_RESUME_ID/view"
@@ -162,25 +163,37 @@ export function HeroSection() {
                         </a>
                         <a
                             href="mailto:divyanshu_k@me.iitr.ac.in"
-                            className="rounded bg-stone-200 px-3 py-2 font-mono text-sm text-stone-700 transition-all hover:bg-stone-300 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700"
+                            aria-label="Send email"
+                            className="inline-flex h-8 w-8 items-center justify-center rounded border border-stone-200 text-stone-700 transition-colors hover:bg-stone-100 dark:border-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-900"
                         >
-                            Email
+                            <Mail className="h-4 w-4" />
+                        </a>
+                        <a
+                            href="https://x.com/DivtheHuman"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Twitter / X"
+                            className="inline-flex h-8 w-8 items-center justify-center rounded border border-stone-200 text-stone-700 transition-colors hover:bg-stone-100 dark:border-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-900"
+                        >
+                            <Twitter className="h-4 w-4" />
                         </a>
                         <a
                             href="https://github.com/HumanOP"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="rounded bg-stone-200 px-3 py-2 font-mono text-sm text-stone-700 transition-all hover:bg-stone-300 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700"
+                            aria-label="GitHub"
+                            className="inline-flex h-8 w-8 items-center justify-center rounded border border-stone-200 text-stone-700 transition-colors hover:bg-stone-100 dark:border-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-900"
                         >
-                            GitHub
+                            <Github className="h-4 w-4" />
                         </a>
                         <a
                             href="https://www.linkedin.com/in/divyanshu-k/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="rounded bg-stone-200 px-3 py-2 font-mono text-sm text-stone-700 transition-all hover:bg-stone-300 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700"
+                            aria-label="LinkedIn"
+                            className="inline-flex h-8 w-8 items-center justify-center rounded border border-stone-200 text-stone-700 transition-colors hover:bg-stone-100 dark:border-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-900"
                         >
-                            LinkedIn
+                            <Linkedin className="h-4 w-4" />
                         </a>
                     </div>
                 </div>
